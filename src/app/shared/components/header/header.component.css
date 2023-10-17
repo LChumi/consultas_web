@@ -1,0 +1,22 @@
+.custom-navbar {
+    background: rgb(184,228,250);
+    background: linear-gradient(90deg, rgba(184,228,250,1) 11%, rgba(16,178,239,1) 60%, rgba(24,23,23,0.9042117335215336) 92%);
+}  
+
+nav {
+    height: 100%;
+}
+
+.side-nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.side-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30%;
+}
+

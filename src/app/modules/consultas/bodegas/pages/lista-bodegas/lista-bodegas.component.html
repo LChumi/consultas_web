@@ -1,0 +1,22 @@
+<span class="background"></span>
+<div class="container-list">
+  <div class="wrapper">
+    <div class="content">
+      <div class="container">
+        <h1 class="titulo">Lista de bodegas</h1>
+        <div class="row">
+          <div>
+            <ul class="list-group">
+              <li
+                *ngFor="let bodega of lista_bodegas" (click)="seleccionarBod(bodega)">
+                <span class="badge badge-primary">{{ bodega.bod_empresa }}</span>
+                bodegas - {{ bodega.bod_nombre }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

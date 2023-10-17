@@ -1,0 +1,57 @@
+.background {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-image: url('../../../../../../assets/images/fondoDor.jpg');
+  opacity: 0.5;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative; /* Agrega esta línea */
+}
+.wrapper {
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    border: 2px solid #74b2cf;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  
+  .titulo {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .list-group {
+    list-style: circle;
+    padding: 0;
+  }
+  
+  .list-group li {
+    display: inline-block;
+    border-bottom: 2px solid grey;
+    color: rgb(0, 0, 0); padding: 10px;
+    
+  }

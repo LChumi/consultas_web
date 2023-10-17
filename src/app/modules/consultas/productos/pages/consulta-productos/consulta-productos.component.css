@@ -1,0 +1,56 @@
+.background {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-image: url('../../../../../../assets/images/background.jpg');
+  opacity: 0.5;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative; /* Agrega esta línea */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  max-width: 850px;
+  max-height: 850px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  position: relative; /* Agrega esta línea */
+  z-index: 1; /* Agrega esta línea para asegurar que el contenido esté encima del fondo */
+}
+
+
+.product-name {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.price {
+  color: rgb(232, 61, 61);
+  font-size: 30px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}

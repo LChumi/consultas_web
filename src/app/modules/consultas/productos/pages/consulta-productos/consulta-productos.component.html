@@ -1,0 +1,22 @@
+<body>
+  <span class="background"></span>
+  <div class="container">
+    <div class="card">
+      <img appImagenRota [src]="imageUrl" alt="producto" style="width: 100%;">
+      <h1 class="product-name">{{producto.pro_nombre}}</h1>
+      <p class="price">${{producto.pro_impuesto === 1 ? (producto.pvp | iva ).toFixed(2) : producto.pvp.toFixed(2)}}</p>
+    <p>{{producto.pro_id1}}</p>
+    </div>
+    <div>
+      <p></p>
+      <p class="text-center">Lector de Codigo de Barras</p>
+      <section>
+        <div class="container">
+          <div class="dis-sto">
+            <input type="text" [(ngModel)]="barra" placeholder="Ingrese la barra" (keyup.enter)="mostrarProducto()" (keyup)="clearInput($event)">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>

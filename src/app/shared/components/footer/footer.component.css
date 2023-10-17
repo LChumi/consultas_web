@@ -1,0 +1,41 @@
+footer{
+    background-color: rgb(0, 0, 0);
+}
+
+.footer-content h4 {
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 1.0rem;
+}
+.social-icons {
+    list-style: none;
+    margin-bottom: 0.4rem;
+    display: flex;
+    justify-content: center;
+}
+.social-icons i {
+    font-size: 1.5rem;
+    color: #2041d7;
+    padding: 0.5rem 1rem;
+    
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+    color: #ffc845;
+}
+@media screen and (min-width: 900px) {
+
+    .footer-div{
+        display: flex;
+        justify-content: center;
+    }
+    .social-media,
+    .news-form {
+        width: 100%;
+        max-width: 27.3rem;
+        margin: 0 1rem;
+    }
+}
