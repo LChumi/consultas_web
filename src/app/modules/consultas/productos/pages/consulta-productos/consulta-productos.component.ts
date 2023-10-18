@@ -1,8 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
 import { Producto } from 'src/app/core/models/producto';
-import { URL_IMAGE } from 'src/assets/config';
-import { DataService } from 'src/app/core/services/data.service';
 import { ImagesService } from '../../services/images.service';
 
 @Component({
@@ -27,28 +25,33 @@ export class ConsultaProductosComponent implements OnInit {
   mostrarProducto(): void {
     this.productoServie.getProducto(this.barra, this.id_bod).subscribe(
       (producto: Producto) => {
-        this.producto = producto; 
-        console.log(producto)
+        this.producto = producto;
       }
     );
     this.imagen.getImagen(this.barra+'.jpg').subscribe(
       data => {
-        const objectUrl=URL.createObjectURL(data);
-        this.imageUrl=objectUrl;
+        if (data){
+          const objectUrl=URL.createObjectURL(data);
+          this.imageUrl=objectUrl;
+        }else{
+          this.imageUrl='';
+        }
+      },
+      error => {
+        this.imageUrl='';
       }
     );
   }
-  
-  barra: string = '';
 
+  barra: string = '';
   clearInput(event: any) {
     if (event.keyCode === 13) {
       const input = event.target;
       if (input.value) {
         this.barra = input.value;
-        input.value = ''; 
+        input.value = '';
       }
     }
   }
-  
+
 }

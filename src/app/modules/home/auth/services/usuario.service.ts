@@ -3,6 +3,7 @@ import { API_URL } from 'src/assets/config';
 import { BehaviorSubject, Observable, } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { startWith } from 'rxjs/operators';
+import {LoginRequest} from "../../../../core/models/auth/loginRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class UsuarioService {
     this.isLoggedInSubject.next(isLoggedIn === 'true');
    }
 
-  login(username: any, password: any): Observable<any> {
-    return this.http.get<any>(this.baseUrl + 'login/' + username + '/' + password);
+  login(loginData:LoginRequest): Observable<any> {
+    return this.http.post<any>(this.baseUrl+'login',loginData)
   }
 
   setIsLoggedIn(value: boolean): void {

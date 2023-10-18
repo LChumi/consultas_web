@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import { DomSanitizer,SafeResourceUrl} from '@angular/platform-browser';
 import { Usuarios } from 'src/app/core/models/usuarios';
 import { DataService } from 'src/app/core/services/data.service';
+import {LoginRequest} from "../../../../../core/models/auth/loginRequest";
 
 @Component({
   selector: 'app-login',
@@ -45,51 +46,54 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    if (this.loginForm.valid) {
-      const username = this.loginForm.controls.username.value;
-      const password = this.loginForm.controls.password.value;
+    if (this.loginForm.valid){
+      const  username = this.loginForm.controls.username.value;
+      const  password = this.loginForm.controls.password.value;
 
-      this.userService.login(username, password).subscribe(
-        data => {
-          if (data != null) {
-            localStorage.setItem('id_usuario', String(data.usr_codigo));
-            localStorage.setItem('id_empresa',String(data.usr_empresa_def));
-            localStorage.setItem('username',String(data.usr_id));
-            localStorage.setItem('isLoggedIn', 'true');
-            this.userService.setIsLoggedIn(true);
-            this.loginForm.reset();
-            this.goToConsultas();
-          } else {
-            alert('err');
-          }
-        },
-        error => {
-          console.error(error);
-          let code:any;
-          code=error.status;
-          switch(code){
-            case 401:{
-              Swal.fire({
-                icon:'error',
-                text:'Credenciales invalidos',
-                footer:'<a href="">Importadora Cumpleaños</a>'
-              });
-              break;
+      if (username !== null && password !== null){
+        const loginData:LoginRequest ={
+          username:username,
+          password:password
+        };
+
+        this.userService.login(loginData).subscribe(
+          (data: any) => {
+            if (data != null) {
+              // Almacenar información en el almacenamiento local
+              localStorage.setItem('id_usuario', String(data.usr_codigo));
+              localStorage.setItem('id_empresa', String(data.usr_empresa_def));
+              localStorage.setItem('username', String(data.usr_id));
+              localStorage.setItem('isLoggedIn', 'true');
+              this.userService.setIsLoggedIn(true);
+              this.loginForm.reset();
+              this.goToConsultas();
+            } else {
+              alert('Credenciales inválidas');
             }
-            case 500:{
+          },
+          (error: any) => {
+            const code = error.status;
+
+            if (code === 401) {
+              Swal.fire({
+                icon: 'error',
+                text: 'Credenciales inválidas',
+                footer: '<a href="">Importadora Cumpleaños</a>'
+              });
+            } else if (code === 500) {
               Swal.fire({
                 icon: 'info',
                 title: 'Error en el servidor',
-                text: 'Vuelve a intentar mas tarde',
-                footer:'<a href="">Importadora Cumpleaños</a>'
+                text: 'Vuelve a intentar más tarde',
+                footer: '<a href="">Importadora Cumpleaños</a>'
               });
-              break;
             }
           }
-        }
-      );
-    } else {
-      this.loginForm.markAllAsTouched();
+        );
+      }else {
+        this.loginForm.markAllAsTouched();
+      }
+
     }
   }
 }

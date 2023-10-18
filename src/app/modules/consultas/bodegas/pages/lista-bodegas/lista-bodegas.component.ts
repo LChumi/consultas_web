@@ -34,7 +34,6 @@ export class ListaBodegasComponent implements OnInit {
   seleccionarBod(bodega:Bodega):void{
     this.selectedBodega=bodega;
     this.id_bod=this.selectedBodega.bod_codigo;
-    console.log(this.id_bod)
     localStorage.setItem('bod_id',String(this.selectedBodega.bod_codigo));
     this.router.navigate(['Consultas/consulta_precios'])
   }

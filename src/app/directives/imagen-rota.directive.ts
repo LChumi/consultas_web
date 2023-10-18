@@ -12,5 +12,4 @@ export class ImagenRotaDirective {
     const element =this.elementRef.nativeElement
     element.src='assets/images/imagen_rota.jpg'
   }
-
 }
