@@ -1,33 +1,22 @@
 <nav class="navbar navbar-expand custom-navbar px-2">
-
-  
-
   <a  class="navbar-brand px-4 text-light" routerLinkActive="active" routerLink="/Cumpleaños/inicio">
     <img [src]="imagePath" alt="logo">
   </a>
-
- 
-
   <div class="navbar-collapse">
 
-    <ul class="navbar-nav me-auto">  
+    <ul class="navbar-nav me-auto">
       <li class="nav-item" *ngIf="!isLoggedIn">
         <a routerLinkActive="active" routerLink="/Cumpleaños/login" class="nav-link">
           <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
         </a>
-      </li>  
+      </li>
       <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLinkActive="active" routerLink="Consultas/bodegas" class="nav-link">
           <i class="fa-solid fa-magnifying-glass"></i> Consultas
         </a>
       </li>
     </ul>
-    
-
 </div>
-
-
-
   <div class="profile-logo dropdown" *ngIf="isLoggedIn" >
       <button class="btn btn-outline-light dropdown-toggle" role="button"
        data-bs-toggle="dropdown"> {{nombre}}

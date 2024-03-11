@@ -1,0 +1,12 @@
+Unable to read angular.json
+TypeError: Cannot read properties of null (reading 'generators')
+    at [90mC:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mnx[24m\src\adapter\ngcli-adapter.js:200:51
+    at doInnerSub [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\operators\mergeInternals.js:22:31[90m)[39m
+    at outerNext [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\operators\mergeInternals.js:17:70[90m)[39m
+    at OperatorSubscriber._this._next [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\operators\OperatorSubscriber.js:33:21[90m)[39m
+    at Subscriber.next [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\Subscriber.js:51:18[90m)[39m
+    at [90mC:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\observable\zip.js:50:36
+    at OperatorSubscriber._this._next [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\operators\OperatorSubscriber.js:33:21[90m)[39m
+    at Subscriber.next [90m(C:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\Subscriber.js:51:18[90m)[39m
+    at [90mC:\Users\Luis\Documents\GitHub\consultas_web\[39mnode_modules\[4mrxjs[24m\dist\cjs\internal\observable\innerFrom.js:120:28
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
