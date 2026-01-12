@@ -4,26 +4,26 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes =[
   {
-    path: 'Cumpleaños',
+    path: 'verificador',
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'Consultas',
+    path: 'consultas',
     canActivate: [AuthGuard],
     loadChildren: () => import('./modules/consultas/consultas.module').then(m => m.ConsultasModule)
   },
   {
     path: '**',
-    redirectTo: '/Cumpleaños/inicio'
+    redirectTo: '/verificador/inicio'
   }
 ];
 
 @NgModule({
-  imports: [ 
+  imports: [
     RouterModule.forRoot(routes)
   ],
   exports: [
-    RouterModule 
+    RouterModule
   ]
 })
 export class AppRoutingModule { }

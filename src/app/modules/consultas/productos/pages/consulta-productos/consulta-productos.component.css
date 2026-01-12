@@ -54,3 +54,10 @@ select {
 .text-center {
   text-align: center;
 }
+
+.product-image {
+  width: 100%;
+  max-height: 400px;   /* límite de altura */
+  object-fit: contain; /* ajusta la imagen dentro del espacio sin recortarla */
+  border-radius: 5px;  /* opcional, esquinas redondeadas */
+}

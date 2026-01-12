@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToConsultas():void{
-    this.router.navigate(['/Consultas'])
+    this.router.navigate(['/consultas'])
   }
 
 

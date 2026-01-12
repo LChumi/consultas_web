@@ -8,7 +8,7 @@ const routes: Routes = [
   path:'',
   children:[
     {path:'bodegas',component:ListaBodegasComponent},
-    {path:'consulta_precios',component:ConsultaProductosComponent},
+    {path:'productos',component:ConsultaProductosComponent},
     {path:'**',redirectTo:'bodegas'}
   ]
 }

@@ -14,21 +14,21 @@ export class NavigationComponent implements OnInit {
       number: '1',
       name: 'home',
       icon: 'fa-solid fa-house',
-      routerLink: '/Cumpleaños/inicio'
+      routerLink: '/verificador/inicio'
     },
     {
       number: '1',
       name: 'Consultas',
       icon: 'fa-solid fa-barcode',
-      routerLink: '/Consultas'
+      routerLink: '/consultas'
     },
     {
       number: '1',
       name: 'Secciones',
       icon: 'fa-solid fa-warehouse',
-      routerLink: '/Cumpleaños/inicio'
+      routerLink: '/verificador/inicio'
     },
-    
+
   ]
   constructor() { }
 
