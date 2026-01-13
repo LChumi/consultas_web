@@ -28,7 +28,6 @@ export class NavigationComponent implements OnInit {
       icon: 'fa-solid fa-warehouse',
       routerLink: '/verificador/inicio'
     },
-
   ]
   constructor() { }
 

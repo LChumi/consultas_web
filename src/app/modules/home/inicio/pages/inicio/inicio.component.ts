@@ -51,6 +51,6 @@ export class InicioComponent implements OnInit {
         delay: 100,
         disableOnInteraction: false
       }
-    });    
+    });
   }
 }

@@ -10,7 +10,6 @@ import { UsuarioService } from 'src/app/modules/home/auth/services/usuario.servi
 export class HeaderComponent implements OnInit {
 
   @Output() sideNavToggled = new EventEmitter<boolean>();
-  menuStatus = false;
   isLoggedIn = false;
   nombre: any;
 
@@ -25,13 +24,6 @@ export class HeaderComponent implements OnInit {
         this.nombre = localStorage.getItem('username');
       }
     });
-  }
-  
-  
-
-  SideNavToggle(): void {
-    this.menuStatus = !this.menuStatus;
-    this.sideNavToggled.emit(this.menuStatus);
   }
 
   logout(): void {
